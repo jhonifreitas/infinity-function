@@ -97,12 +97,12 @@ class UserController {
     if (user.name !== body.name || user.email !== body.email || user.phone !== body.phone) {
       const data: admin.auth.UpdateRequest = {};
 
-      if (body.user.name && user.name !== body.user.name) {
-        data.displayName = body.user.name;
-      } if (body.user.email && user.email !== body.user.email) {
-        data.email = body.user.email;
-      } if (body.user.phone && user.phone !== body.user.phone) {
-        data.phoneNumber = `+55${body.user.phone}`;
+      if (body.name && user.name !== body.name) {
+        data.displayName = body.name;
+      } if (body.email && user.email !== body.email) {
+        data.email = body.email;
+      } if (body.phone && user.phone !== body.phone) {
+        data.phoneNumber = `+55${body.phone}`;
       }
 
       if (Object.keys(data).length) {
