@@ -28,25 +28,25 @@ class StudentController {
     student.email = body.email;
     student.authType = body.authType;
     
-    if (student.rg) student.rg = body.rg;
-    if (student.cpf) student.cpf = body.cpf;
+    if (body.rg) student.rg = body.rg;
+    if (body.cpf) student.cpf = body.cpf;
     if (body.phone) student.phone = body.phone;
     if (body.image) student.image = body.image;
-    if (student.token) student.token = body.token;
-    if (student.genre) student.genre = body.genre;
-    if (student.social) student.social = body.social;
-    if (student.course) student.course = body.course;
-    if (student.address) student.address = body.address;
-    if (student.company) student.company = body.company;
-    if (student.dateBirth) student.dateBirth = body.dateBirth;
-    if (student.childrens) student.childrens = body.childrens;
-    if (student.cityBirth) student.cityBirth = body.cityBirth;
-    if (student.rgEmitter) student.rgEmitter = body.rgEmitter;
-    if (student.stateBirth) student.stateBirth = body.stateBirth;
-    if (student.scholarity) student.scholarity = body.scholarity;
-    if (student.motherName) student.motherName = body.motherName;
-    if (student.spouseName) student.spouseName = body.spouseName;
-    if (student.civilStatus) student.civilStatus = body.civilStatus;
+    if (body.token) student.token = body.token;
+    if (body.genre) student.genre = body.genre;
+    if (body.social) student.social = body.social;
+    if (body.course) student.course = body.course;
+    if (body.address) student.address = body.address;
+    if (body.company) student.company = body.company;
+    if (body.dateBirth) student.dateBirth = body.dateBirth;
+    if (body.childrens) student.childrens = body.childrens;
+    if (body.cityBirth) student.cityBirth = body.cityBirth;
+    if (body.rgEmitter) student.rgEmitter = body.rgEmitter;
+    if (body.stateBirth) student.stateBirth = body.stateBirth;
+    if (body.scholarity) student.scholarity = body.scholarity;
+    if (body.motherName) student.motherName = body.motherName;
+    if (body.spouseName) student.spouseName = body.spouseName;
+    if (body.civilStatus) student.civilStatus = body.civilStatus;
 
     const data: admin.auth.CreateRequest = {
       email: student.email,
@@ -97,27 +97,26 @@ class StudentController {
     if (body.image) student.image = body.image;
     if (body.phone) student.phone = body.phone;
     if (body.email) student.email = body.email;
-    if (body.authType) student.authType = body.authType;
 
-    if (student.rg) student.rg = body.rg;
-    if (student.cpf) student.cpf = body.cpf;
+    if (body.rg) student.rg = body.rg;
+    if (body.cpf) student.cpf = body.cpf;
     if (body.phone) student.phone = body.phone;
     if (body.image) student.image = body.image;
-    if (student.token) student.token = body.token;
-    if (student.genre) student.genre = body.genre;
-    if (student.social) student.social = body.social;
-    if (student.course) student.course = body.course;
-    if (student.address) student.address = body.address;
-    if (student.company) student.company = body.company;
-    if (student.dateBirth) student.dateBirth = body.dateBirth;
-    if (student.childrens) student.childrens = body.childrens;
-    if (student.cityBirth) student.cityBirth = body.cityBirth;
-    if (student.rgEmitter) student.rgEmitter = body.rgEmitter;
-    if (student.stateBirth) student.stateBirth = body.stateBirth;
-    if (student.scholarity) student.scholarity = body.scholarity;
-    if (student.motherName) student.motherName = body.motherName;
-    if (student.spouseName) student.spouseName = body.spouseName;
-    if (student.civilStatus) student.civilStatus = body.civilStatus;
+    if (body.token) student.token = body.token;
+    if (body.genre) student.genre = body.genre;
+    if (body.social) student.social = body.social;
+    if (body.course) student.course = body.course;
+    if (body.address) student.address = body.address;
+    if (body.company) student.company = body.company;
+    if (body.dateBirth) student.dateBirth = body.dateBirth;
+    if (body.childrens) student.childrens = body.childrens;
+    if (body.cityBirth) student.cityBirth = body.cityBirth;
+    if (body.rgEmitter) student.rgEmitter = body.rgEmitter;
+    if (body.stateBirth) student.stateBirth = body.stateBirth;
+    if (body.scholarity) student.scholarity = body.scholarity;
+    if (body.motherName) student.motherName = body.motherName;
+    if (body.spouseName) student.spouseName = body.spouseName;
+    if (body.civilStatus) student.civilStatus = body.civilStatus;
 
     await StudentRepository.update(id, student);
 

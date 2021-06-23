@@ -62,5 +62,6 @@ export class StudentCompany {
   companyId!: string;
   branchId!: string;
   departmentId!: string;
+  areaId!: string;
   postId!: string;
 }
