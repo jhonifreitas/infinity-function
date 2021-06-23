@@ -1,4 +1,4 @@
-import express, { Request, Response } from "express";
+import express, { NextFunction, Request, Response } from "express";
 import "express-async-errors";
 
 import * as functions from "firebase-functions";
@@ -24,7 +24,8 @@ app.use(
   (
     err: Error,
     request: Request,
-    response: Response
+    response: Response,
+    nextFunction: NextFunction
   ) => {
     if (err instanceof AppError) {
       return response.status(err.statusCode).json({

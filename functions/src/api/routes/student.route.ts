@@ -7,9 +7,10 @@ import { ensureAuthentication } from '../middlewares/ensure-authentication';
 
 const studentRouter = Router();
 
+studentRouter.post('/', StudentController.store);
+
 studentRouter.use(ensureAuthentication);
 
-studentRouter.post('/', StudentController.store);
 studentRouter.put('/:id', StudentController.update);
 studentRouter.delete(
   '/:id',
