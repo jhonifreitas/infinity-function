@@ -38,7 +38,6 @@ class StudentController {
     if (body.course) student.course = body.course;
     if (body.address) student.address = body.address;
     if (body.company) student.company = body.company;
-    if (body.dateBirth) student.dateBirth = body.dateBirth;
     if (body.childrens) student.childrens = body.childrens;
     if (body.cityBirth) student.cityBirth = body.cityBirth;
     if (body.rgEmitter) student.rgEmitter = body.rgEmitter;
@@ -47,6 +46,7 @@ class StudentController {
     if (body.motherName) student.motherName = body.motherName;
     if (body.spouseName) student.spouseName = body.spouseName;
     if (body.civilStatus) student.civilStatus = body.civilStatus;
+    if (body.dateBirth) student.dateBirth = new Date(body.dateBirth);
 
     const data: admin.auth.CreateRequest = {
       email: student.email,
@@ -108,7 +108,6 @@ class StudentController {
     if (body.course) student.course = body.course;
     if (body.address) student.address = body.address;
     if (body.company) student.company = body.company;
-    if (body.dateBirth) student.dateBirth = body.dateBirth;
     if (body.childrens) student.childrens = body.childrens;
     if (body.cityBirth) student.cityBirth = body.cityBirth;
     if (body.rgEmitter) student.rgEmitter = body.rgEmitter;
@@ -117,6 +116,7 @@ class StudentController {
     if (body.motherName) student.motherName = body.motherName;
     if (body.spouseName) student.spouseName = body.spouseName;
     if (body.civilStatus) student.civilStatus = body.civilStatus;
+    if (body.dateBirth) student.dateBirth = new Date(body.dateBirth);
 
     await StudentRepository.update(id, student);
 
