@@ -108,7 +108,6 @@ class StudentController {
     if (body.course) student.course = body.course;
     if (body.address) student.address = body.address;
     if (body.company) student.company = body.company;
-    if (body.childrens) student.childrens = body.childrens;
     if (body.cityBirth) student.cityBirth = body.cityBirth;
     if (body.rgEmitter) student.rgEmitter = body.rgEmitter;
     if (body.stateBirth) student.stateBirth = body.stateBirth;
@@ -117,6 +116,7 @@ class StudentController {
     if (body.spouseName) student.spouseName = body.spouseName;
     if (body.civilStatus) student.civilStatus = body.civilStatus;
     if (body.dateBirth) student.dateBirth = new Date(body.dateBirth);
+    if (body.childrens || body.childrens === 0) student.childrens = body.childrens;
 
     await StudentRepository.update(id, student);
 
