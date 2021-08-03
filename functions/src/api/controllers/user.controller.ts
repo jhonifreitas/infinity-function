@@ -93,7 +93,7 @@ class UserController {
 
     const user = await UserRepository.getById(id);
 
-    if (body.authRole && body.authRole !== user.authRole) await fireAuth.setCustomUserClaims(id, {role: user.authRole});
+    if (body.authRole && body.authRole !== user.authRole) await fireAuth.setCustomUserClaims(id, {role: body.authRole});
     if (user.name !== body.name || user.email !== body.email || user.phone !== body.phone) {
       const data: admin.auth.UpdateRequest = {};
 
