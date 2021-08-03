@@ -34,6 +34,8 @@ class StudentController {
       }
     }
 
+    students.sort((a, b) => a.name.localeCompare(b.name));
+
     return response.json({
       success: true,
       students
