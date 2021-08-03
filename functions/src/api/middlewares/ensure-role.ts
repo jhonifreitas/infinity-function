@@ -8,7 +8,7 @@ export const ensureRole = (roles: AuthRole[]) => (
   _: Response,
   nextFunction: NextFunction
 ) => {
-  if (undefined === roles.find(role => request.user?.[role])) {
+  if (undefined === roles.find(role => request.user?.role === role)) {
     throw new AppError('Without permission.', 'application/without-permission', 403);
   }
 
