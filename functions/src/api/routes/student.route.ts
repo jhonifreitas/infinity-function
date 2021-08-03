@@ -12,10 +12,8 @@ studentRouter.post('/', StudentController.store);
 studentRouter.use(ensureAuthentication);
 
 studentRouter.put('/:id', StudentController.update);
-studentRouter.delete(
-  '/:id',
-  ensureRole([AuthRole.ADMINISTRATOR]),
-  StudentController.delete
-);
+
+studentRouter.get('/', ensureRole([AuthRole.ADMINISTRATOR]), StudentController.all);
+studentRouter.delete('/:id', ensureRole([AuthRole.ADMINISTRATOR]), StudentController.delete);
 
 export default studentRouter;

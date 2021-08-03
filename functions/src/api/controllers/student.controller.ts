@@ -11,10 +11,34 @@ import ValidationError from '../../exceptions/validation-error';
 
 import { Student } from '../../models/student';
 import StudentRepository from '../../repositories/student.repository';
+import CompanyRepository from '../../repositories/company/company.repository';
+import CompanyAreaRepository from '../../repositories/company/area.repository';
+import CompanyPostRepository from '../../repositories/company/post.repository';
+import CompanyBranchRepository from '../../repositories/company/branch.repository';
+import CompanyDepartmentRepository from '../../repositories/company/department.repository';
 
 const fireAuth = admin.auth();
 
 class StudentController {
+
+  async all(request: Request, response: Response) {
+    const students = await StudentRepository.getAll();
+
+    for (const student of students) {
+      if (student.company) {
+        if (student.company.areaId) student.company._area = await CompanyAreaRepository.getById(student.company.areaId);
+        if (student.company.postId) student.company._post = await CompanyPostRepository.getById(student.company.postId);
+        if (student.company.branchId) student.company._branch = await CompanyBranchRepository.getById(student.company.branchId);
+        if (student.company.companyId) student.company._company = await CompanyRepository.getById(student.company.companyId);
+        if (student.company.departmentId) student.company._department = await CompanyDepartmentRepository.getById(student.company.departmentId);
+      }
+    }
+
+    return response.json({
+      success: true,
+      students
+    })
+  }
   
   async store(request: Request, response: Response) {
     const body = request.body;
